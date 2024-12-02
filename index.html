@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños mi cielo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            font-family: 'Pacifico', cursive;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #87CEEB, #E0FFFF);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1 {
+            color: #FF1493;
+            font-size: 4em;
+            margin-top: 20px;
+            text-shadow: 3px 3px 6px #FFFFFF, -3px -3px 6px #FF69B4;
+        }
+        .scene {
+            position: relative;
+            width: 100%;
+            height: 70%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .grass {
+            width: 100%;
+            height: 20%;
+            background: linear-gradient(to top, #228B22, #7CFC00);
+            position: absolute;
+            bottom: 0;
+        }
+        .tree {
+            position: absolute;
+            bottom: 20%;
+            background: #8B4513;
+            width: 50px;
+            height: 150px;
+            border-radius: 15px;
+        }
+        .tree .leaves {
+            position: absolute;
+            bottom: 100px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #228B22 0%, #006400 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px #006400;
+        }
+        .tree:first-child { left: 10%; }
+        .tree:last-child { right: 10%; }
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FFA500;
+            animation: shine 4s infinite alternate ease-in-out;
+        }
+        .sun::before, .sun::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 10px;
+            background: #FFD700;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .sun::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        .bouquet {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+        }
+        .flower-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: sway 3s infinite alternate ease-in-out;
+        }
+        .flower {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .petal {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #FFA07A 0%, #FF4500 100%);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .petal:nth-child(1) { top: 0; left: 25px; }
+        .petal:nth-child(2) { top: 25px; left: 0; }
+        .petal:nth-child(3) { top: 25px; left: 50px; }
+        .petal:nth-child(4) { top: 50px; left: 25px; }
+        .center {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #FFD700 0%, #FF8C00 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            box-shadow: 0 0 10px #FF8C00;
+        }
+        .stem {
+            width: 8px;
+            height: 150px;
+            background-color: green;
+            border-radius: 5px;
+            position: relative;
+        }
+        .leaf {
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to bottom, #7CFC00, #228B22);
+            border-radius: 20px 40px 40px 20px;
+            position: absolute;
+        }
+        .leaf.left {
+            top: 50px;
+            left: -30px;
+            transform: rotate(-30deg);
+        }
+        .leaf.right {
+            top: 90px;
+            left: 10px;
+            transform: rotate(30deg);
+        }
+        .note {
+            background: #FFFAF0;
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.5em;
+            color: #8B0000;
+        }
+        @keyframes sway {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+        @keyframes shine {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz Cumpleaños mi niñita hermosa</h1>
+    <div class="sun"></div>
+    <div class="scene">
+        <div class="tree">
+            <div class="leaves"></div>
+        </div>
+        <div class="tree">
+            <div class="leaves"></div>
+        </div>
+        <div class="bouquet">
+            <div class="flower-container">
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="center"></div>
+                </div>
+                <div class="stem">
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+                </div>
+            </div>
+            <div class="flower-container">
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="center"></div>
+                </div>
+                <div class="stem">
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+                </div>
+            </div>
+            <div class="flower-container">
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="center"></div>
+                </div>
+                <div class="stem">
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+                </div>
+            </div>
+        </div>
+        <div class="grass"></div>
+    </div>
+    <div class="note">
+        <p>Eres lo mas importante de mi vida y espero que estas flores virtuales ayuden un poquito... jejeje. ¡Feliz cumpleaños mi osita hermosa ^^!</p>
+    </div>
+</body>
+</html>
